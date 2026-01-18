@@ -83,7 +83,7 @@ You must classify each claim into exactly ONE of the following:
 - Strictly base your decision using ONLY the given evidence.
 - Do not use prior knowledge.
 - Do not hallucinate.
-- If the evidence is old and the claim implies it is current, mark it as Inaccurate (Outdated).
+- If a claim is time-sensitive (models, prices, leadership, stats etc.) and the evidence does not explicitly confirm it is current, mark it as Inaccurate (Possibly outdated).
 
 Return output in a structured JSON ONLY.
 
