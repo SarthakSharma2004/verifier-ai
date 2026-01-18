@@ -23,6 +23,13 @@
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-brightgreen?style=for-the-badge)](https://my-assignment-verifier-ai.streamlit.app/)
 
+
+### Demo Video:
+
+[![Demo Video](https://img.shields.io/badge/Demo%20Video-Watch-blue?style=for-the-badge)](https://drive.google.com/file/d/1tgvK5NflEvgn-XuglWhDHR5a8iP7EzyK/view?usp=sharing)
+
+
+
 ---
 
 
