@@ -6,8 +6,8 @@ import os
 
 load_dotenv()
 
-#--------------------HOME PAGE---------------------
-#--------------------------------------------------
+#--------------------CONFIG---------------------
+#-----------------------------------------------
 
 st.set_page_config(
     page_title="Verify ai",
@@ -16,6 +16,19 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+
+def get_key(name):
+    return st.secrets.get(name, os.getenv(name))
+
+GOOGLE_API_KEY = get_key("GOOGLE_API_KEY")
+TAVILY_API_KEY = get_key("TAVILY_API_KEY")
+GROQ_API_KEY = get_key("GROQ_API_KEY")
+
+
+
+
+#--------------------HOME PAGE---------------------
+#--------------------------------------------------
 
 st.markdown(
     """
