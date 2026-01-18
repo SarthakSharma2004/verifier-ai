@@ -2,7 +2,7 @@ from langchain_tavily import TavilySearch
 import os
 
 
-def get_web_retriever(claim: str):
+def search_claim(claim: str):
     """
     This function takes a claim string and returns Tavily search results.
     """

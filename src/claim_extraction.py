@@ -5,7 +5,7 @@ from src.llm_client import get_llm_client
 
 from langchain_core.output_parsers import JsonOutputParser
 
-def extract_claim(docs : list[Document]) -> list[str]:
+def extract_claim(docs : list[Document]) -> list[dict]:
     """
     Takes a list of LangChain Document objects
     and returns a list of extracted claims (JSON).
