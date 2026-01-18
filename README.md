@@ -62,6 +62,8 @@ Each claim is backed by real-time sources to ensure transparency and trust.
 - ⚖️ Verdict Classification
 - 📚 Source Citations
 - 🎨 Clean Streamlit UI
+- ⏳ Time-Aware Verification (Detects outdated claims using current date context)
+
 
 
 
