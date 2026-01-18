@@ -56,3 +56,58 @@ Extract claims from the following document:
         ])
 
     return prompt
+
+
+
+
+
+def get_verifier_prompt():
+    """This prompt guides llm to verify claims."""
+    
+
+    system_prompt = """
+You are a professional fact-checking assistant.
+Your task is to verify factual claims using the provided web evidence.
+
+You must classify each claim into exactly ONE of the following:
+
+- Verified: The evidence clearly supports the claim.
+- Inaccurate: The claim is partially correct, outdated, or has incorrect details.
+- False: The evidence contradicts the claim or no reliable evidence exists.
+
+
+**RULES:**
+
+- Strictly base your decision using ONLY the given evidence.
+- Do not use prior knowledge.
+- Do not hallucinate.
+
+Return output in a structured JSON ONLY.
+
+**RETURN FORMAT**
+
+{{
+  "claim": "...",
+  "verdict": "Verified | Inaccurate | False"
+}}
+"""
+
+
+
+    human_prompt = """
+CLAIM:
+{claim}
+
+
+WEB EVIDENCE:
+{evidence}
+"""
+
+
+
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", system_prompt),
+        ("human", human_prompt),
+    ])
+
+    return prompt
