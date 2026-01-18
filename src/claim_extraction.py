@@ -17,7 +17,7 @@ def extract_claim(docs : list[Document]) -> list[dict]:
     prompt = extract_claims_prompt()
     parser = JsonOutputParser()
 
-    chain = llm | prompt | parser
+    chain = prompt | llm | parser
 
     result = chain.invoke({"input" : full_text})
 

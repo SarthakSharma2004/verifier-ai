@@ -14,7 +14,7 @@ def verify_claims(claims: list[dict]) -> list[dict]:
     prompt = get_verifier_prompt()
     parser = JsonOutputParser()
 
-    chain = llm | prompt | parser
+    chain = prompt | llm | parser
 
     final_results = []
 
