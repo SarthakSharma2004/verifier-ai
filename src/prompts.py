@@ -29,7 +29,7 @@ A valid claim is:
 
 
 IMPORTANT:
-- Return results as a structured JSON list ONLY. 
+- Return results as a structured JSON ONLY. 
 - Do not add any extra commentary.
 
 
@@ -69,6 +69,8 @@ def get_verifier_prompt():
 You are a professional fact-checking assistant.
 Your task is to verify factual claims using the provided web evidence.
 
+Today's date is: {current_date} 
+
 You must classify each claim into exactly ONE of the following:
 
 - Verified: The evidence clearly supports the claim.
@@ -81,6 +83,7 @@ You must classify each claim into exactly ONE of the following:
 - Strictly base your decision using ONLY the given evidence.
 - Do not use prior knowledge.
 - Do not hallucinate.
+- If the evidence is old and the claim implies it is current, mark it as Inaccurate (Outdated).
 
 Return output in a structured JSON ONLY.
 

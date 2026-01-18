@@ -2,7 +2,7 @@ from src.prompts import get_verifier_prompt
 from src.llm_client import get_llm_client
 from src.web_retriever import search_claim
 from langchain_core.output_parsers import JsonOutputParser
-
+from datetime import date
 
 
 def verify_claims(claims: list[dict]) -> list[dict]:
@@ -13,6 +13,7 @@ def verify_claims(claims: list[dict]) -> list[dict]:
     llm = get_llm_client()
     prompt = get_verifier_prompt()
     parser = JsonOutputParser()
+    today = str(date.today())
 
     chain = prompt | llm | parser
 
@@ -25,7 +26,8 @@ def verify_claims(claims: list[dict]) -> list[dict]:
 
         result = chain.invoke({
             "claim": claim_text,
-            "evidence": evidence
+            "evidence": evidence,
+            "current_date": today
         })
 
         result['source'] = evidence
